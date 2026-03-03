@@ -17,9 +17,9 @@
 
   <Config Name="WebUI Port" Target="8880" Default="8880" Mode="tcp" Description="Web/API exposed port" Type="Port" Display="always" Required="true" Mask="false">8880</Config>
 
-  <Config Name="Models Path" Target="/app/api/src/models" Default="/mnt/user/appdata/kokoro-fastapi-zh/models" Mode="rw" Description="Host path for model files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/kokoro-fastapi-zh/models</Config>
+  <Config Name="Models Path" Target="/app/api/src/models" Default="" Mode="rw" Description="Optional host path to persist model files. Leave empty to run without a mount." Type="Path" Display="advanced" Required="false" Mask="false"></Config>
 
-  <Config Name="Voices Path" Target="/app/api/src/voices" Default="/mnt/user/appdata/kokoro-fastapi-zh/voices" Mode="rw" Description="Host path for voice .pt files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/kokoro-fastapi-zh/voices</Config>
+  <Config Name="Voices Path" Target="/app/api/src/voices" Default="" Mode="rw" Description="Optional host path to persist voice .pt files. Leave empty to run without a mount." Type="Path" Display="advanced" Required="false" Mask="false"></Config>
 
   <Config Name="Python Path" Target="PYTHONPATH" Default="/app:/app/api" Mode="" Description="Python import path" Type="Variable" Display="advanced" Required="false" Mask="false">/app:/app/api</Config>
 
