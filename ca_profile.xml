@@ -3,9 +3,9 @@
   <Icon>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/assets/avatar.png</Icon>
 
   <Profile>
-    Just some Unraid templates I use and maintain.
+    Just some Unraid apps I use and maintain.
   </Profile>
 
   <DonateLink>https://github.com/sponsors/hsiang-han</DonateLink>
-  <DonateText>Like these templates? Support me on GitHub Sponsors.</DonateText>
+  <DonateText>Like these apps? Support me on GitHub Sponsors.</DonateText>
 </Maintainer>
