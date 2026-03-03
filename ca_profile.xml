@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/assets/avatar.png</Icon>
+
+  <Profile>
+    Just some Unraid templates I use and maintain.
+  </Profile>
+
+  <DonateLink>https://github.com/sponsors/hsiang-han</DonateLink>
+  <DonateText>Like these templates? Support me on GitHub Sponsors.</DonateText>
+</Maintainer>
