@@ -1,5 +1,3 @@
-# unraid_apps
-
 Just some Unraid apps I use and maintain.
 
 ## Apps
