@@ -13,7 +13,7 @@
   <Category>Network:Web Network:Other</Category>
   <WebUI>http://[IP]:[PORT:8880]/web</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/hsiang-han/Kokoro-FastAPI-zh/master/unraid/templates/kokoro-fastapi-zh.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/hsiang-han/Kokoro-FastAPI-zh/master/assets/unraid-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/assets/unraid-icon.png</Icon>
 
   <Config Name="WebUI Port" Target="8880" Default="8880" Mode="tcp" Description="Web/API exposed port" Type="Port" Display="always" Required="true" Mask="false">8880</Config>
 
