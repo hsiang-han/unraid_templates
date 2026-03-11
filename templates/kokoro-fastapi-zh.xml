@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/hsiang-han/Kokoro-FastAPI-zh/issues</Support>
+  <Support>https://forums.unraid.net/topic/197527-support-kokoro-fastapi-zh-openai-compatible-tts-api-based-on-kokoro-82m-v11-zh</Support>
   <Project>https://github.com/hsiang-han/Kokoro-FastAPI-zh</Project>
   <Overview>OpenAI-compatible TTS API based on Kokoro-82M-v1.1-zh. Default uses CPU image. For GPU: change Repository to ghcr.io/hsiang-han/kokoro-fastapi-zh-gpu:latest, set USE_GPU=true, and add Extra Parameters: --gpus=all --runtime=nvidia (do not set as default on CPU hosts).</Overview>
   <Category>Network:Web Network:Other</Category>
