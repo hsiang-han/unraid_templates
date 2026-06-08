@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/hsiang-han/CosyVoice3-API/issues</Support>
   <Project>https://github.com/hsiang-han/CosyVoice3-API</Project>
-  <Overview>OpenAI-compatible Text-to-Speech API powered by CosyVoice 3 (Alibaba FunAudioLLM). State-of-the-art Chinese TTS with 18 dialects, 9 languages, built-in voices, instruction-based control, and zero-shot voice cloning. CUDA 12.8 (Blackwell/Ada). First start downloads model files (~10GB) from ModelScope (official Alibaba model hub) which may be slow outside China — this is normal, please be patient. Subsequent starts are fast. Requires NVIDIA GPU with driver 570+.</Overview>
+  <Overview>OpenAI-compatible Text-to-Speech API powered by CosyVoice 3 (Alibaba FunAudioLLM). State-of-the-art Chinese TTS with 18 dialects, 9 languages, built-in voices, instruction-based control, and zero-shot voice cloning. CUDA 12.8 (Blackwell/Ada/Ampere). First start downloads model files (~10GB). Supports RTX 50-series GPUs. Requires NVIDIA GPU with driver 550+.</Overview>
   <Category>AI: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8080]/docs</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/templates/cosyvoice3-api.xml</TemplateURL>
@@ -18,9 +18,15 @@
 
   <Config Name="API Port" Target="8080" Default="8080" Mode="tcp" Description="OpenAI-compatible TTS API port. Swagger docs at /docs" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
 
-  <Config Name="Model Cache" Target="/root/.cache/modelscope/hub" Default="/mnt/user/appdata/cosyvoice3-api/models" Mode="rw" Description="Model download cache. First run downloads ~10GB. Persists across container recreates." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cosyvoice3-api/models</Config>
+  <Config Name="Model Cache (ModelScope)" Target="/root/.cache/modelscope/hub" Default="/mnt/user/appdata/cosyvoice3-api/modelscope" Mode="rw" Description="ModelScope download cache. Used when MODEL_SOURCE=modelscope. First run downloads ~10GB." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cosyvoice3-api/modelscope</Config>
 
-  <Config Name="Model ID" Target="MODEL_DIR" Default="FunAudioLLM/Fun-CosyVoice3-0.5B-2512" Mode="" Description="ModelScope model ID. Restart required after change." Type="Variable" Display="advanced" Required="true" Mask="false">FunAudioLLM/Fun-CosyVoice3-0.5B-2512</Config>
+  <Config Name="Model Cache (HuggingFace)" Target="/root/.cache/models" Default="/mnt/user/appdata/cosyvoice3-api/models" Mode="rw" Description="HuggingFace download cache. Used when MODEL_SOURCE=huggingface." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cosyvoice3-api/models</Config>
+
+  <Config Name="Model ID" Target="MODEL_DIR" Default="FunAudioLLM/Fun-CosyVoice3-0.5B-2512" Mode="" Description="Model ID on ModelScope or HuggingFace. Restart required after change." Type="Variable" Display="advanced" Required="true" Mask="false">FunAudioLLM/Fun-CosyVoice3-0.5B-2512</Config>
+
+  <Config Name="Model Source" Target="MODEL_SOURCE" Default="modelscope" Mode="" Description="Download source: modelscope (fast in China) or huggingface (fast outside China)." Type="Variable" Display="always" Required="false" Mask="false">modelscope</Config>
+
+  <Config Name="HuggingFace Endpoint" Target="HF_ENDPOINT" Default="https://huggingface.co" Mode="" Description="HuggingFace mirror. Only used when MODEL_SOURCE=huggingface. China users can try https://hf-mirror.com" Type="Variable" Display="advanced" Required="false" Mask="false">https://huggingface.co</Config>
 
   <Config Name="FP16" Target="FP16" Default="true" Mode="" Description="Half-precision inference. Reduces VRAM by ~50%. Disable (false) only if you experience quality issues." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
 
