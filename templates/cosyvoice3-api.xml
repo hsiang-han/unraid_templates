@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/hsiang-han/CosyVoice3-API/issues</Support>
   <Project>https://github.com/hsiang-han/CosyVoice3-API</Project>
-  <Overview>OpenAI-compatible Text-to-Speech API powered by CosyVoice 3 (Alibaba FunAudioLLM). State-of-the-art Chinese TTS with 18 dialects, 9 languages, built-in voices, instruction-based control, and zero-shot voice cloning. CUDA 12.8 (Blackwell/Ada). First start downloads model (~2GB) from ModelScope (official Alibaba model hub) which may be slow outside China — this is normal, please be patient. Subsequent starts are fast. Requires NVIDIA GPU with driver 570+.</Overview>
+  <Overview>OpenAI-compatible Text-to-Speech API powered by CosyVoice 3 (Alibaba FunAudioLLM). State-of-the-art Chinese TTS with 18 dialects, 9 languages, built-in voices, instruction-based control, and zero-shot voice cloning. CUDA 12.8 (Blackwell/Ada). First start downloads model files (~10GB) from ModelScope (official Alibaba model hub) which may be slow outside China — this is normal, please be patient. Subsequent starts are fast. Requires NVIDIA GPU with driver 570+.</Overview>
   <Category>AI: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8080]/docs</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/templates/cosyvoice3-api.xml</TemplateURL>
@@ -18,7 +18,7 @@
 
   <Config Name="API Port" Target="8080" Default="8080" Mode="tcp" Description="OpenAI-compatible TTS API port. Swagger docs at /docs" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
 
-  <Config Name="Model Cache" Target="/root/.cache/modelscope/hub" Default="/mnt/user/appdata/cosyvoice3-api/models" Mode="rw" Description="Model download cache. First run downloads ~2GB. Persists across container recreates." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cosyvoice3-api/models</Config>
+  <Config Name="Model Cache" Target="/root/.cache/modelscope/hub" Default="/mnt/user/appdata/cosyvoice3-api/models" Mode="rw" Description="Model download cache. First run downloads ~10GB. Persists across container recreates." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cosyvoice3-api/models</Config>
 
   <Config Name="Model ID" Target="MODEL_DIR" Default="FunAudioLLM/Fun-CosyVoice3-0.5B-2512" Mode="" Description="ModelScope model ID. Restart required after change." Type="Variable" Display="advanced" Required="true" Mask="false">FunAudioLLM/Fun-CosyVoice3-0.5B-2512</Config>
 
