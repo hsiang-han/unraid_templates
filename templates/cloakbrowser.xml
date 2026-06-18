@@ -14,7 +14,7 @@
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/templates/cloakbrowser.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/assets/cloakbrowser-icon.png</Icon>
-  <ExtraParams>--shm-size=2g --device=/dev/dri:/dev/dri --group-add 44 --group-add 109</ExtraParams>
+  <ExtraParams>--shm-size=2g --device=/dev/dri:/dev/dri --group-add 44 --group-add 109 --pids-limit=0</ExtraParams>
   <PostArgs>cloakserve --headless=false --use-gl=angle --use-angle=default --enable-gpu</PostArgs>
 
   <Config Name="CDP Port" Target="9222" Default="9222" Mode="tcp" Description="Chrome DevTools Protocol port. Connect via ws://[IP]:9222. SECURITY: Do not expose to the internet without additional authentication." Type="Port" Display="always" Required="true" Mask="false">9222</Config>
@@ -27,7 +27,7 @@
 
   <Config Name="Auto Update" Target="CLOAKBROWSER_AUTO_UPDATE" Default="true" Mode="" Description="Enable automatic background update checks for the stealth Chromium binary." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
 
-  <Config Name="Idle Timeout" Target="CLOAKSERVE_IDLE_TIMEOUT" Default="" Mode="" Description="Seconds before idle browser processes are reaped. Leave empty for no timeout." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Idle Timeout" Target="CLOAKSERVE_IDLE_TIMEOUT" Default="180" Mode="" Description="Seconds before idle browser processes are reaped. Prevents resource exhaustion from too many Chrome instances." Type="Variable" Display="always" Required="false" Mask="false">180</Config>
 
   <Config Name="Proxy Server" Target="CLOAKBROWSER_PROXY" Default="" Mode="" Description="HTTP/SOCKS5 proxy for browser connections (e.g. http://user:pass@proxy:8080 or socks5://proxy:1080)." Type="Variable" Display="always" Required="false" Mask="false"></Config>
 
