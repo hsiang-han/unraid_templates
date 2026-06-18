@@ -37,7 +37,7 @@
 
   <Config Name="Binary Path Override" Target="CLOAKBROWSER_BINARY_PATH" Default="" Mode="" Description="Skip download - use a custom local Chromium binary path inside the container." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 
-  <Config Name="Download URL" Target="CLOAKBROWSER_DOWNLOAD_URL" Default="cloakbrowser.dev" Mode="" Description="Custom download URL for the stealth binary. Change if behind a corporate proxy or mirror." Type="Variable" Display="advanced" Required="false" Mask="false">cloakbrowser.dev</Config>
+  <Config Name="Download URL" Target="CLOAKBROWSER_DOWNLOAD_URL" Default="" Mode="" Description="Custom download URL for the stealth binary. Leave empty to use the built-in default. Only set if behind a corporate proxy or mirror (must include https://)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 
   <Config Name="Skip Checksum" Target="CLOAKBROWSER_SKIP_CHECKSUM" Default="false" Mode="" Description="Skip SHA-256 verification of downloaded binary. Not recommended." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
 </Container>
