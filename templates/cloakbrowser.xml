@@ -15,7 +15,7 @@
   <TemplateURL>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/templates/cloakbrowser.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/assets/cloakbrowser-icon.png</Icon>
   <ExtraParams>--shm-size=2g --device=/dev/dri:/dev/dri --group-add 44 --group-add 109</ExtraParams>
-  <PostArgs>cloakserve --headless=false</PostArgs>
+  <PostArgs>cloakserve --headless=false --use-gl=egl --enable-gpu --disable-software-rasterizer</PostArgs>
 
   <Config Name="CDP Port" Target="9222" Default="9222" Mode="tcp" Description="Chrome DevTools Protocol port. Connect via ws://[IP]:9222. SECURITY: Do not expose to the internet without additional authentication." Type="Port" Display="always" Required="true" Mask="false">9222</Config>
 
